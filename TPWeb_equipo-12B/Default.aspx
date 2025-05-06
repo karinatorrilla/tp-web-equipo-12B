@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
         <div>
             <h1>Hola</h1>
-            <h2>como va</h2>
+            <h2>como va?</h2>
         </div>
     </form>
 </body>
