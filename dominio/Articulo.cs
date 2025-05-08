@@ -22,9 +22,7 @@ namespace dominio
 
         [DisplayName("Categoría")]
         public Categoria Categoria { get; set; } //obtener IDCategoria
-
-        public List<string> Imagenes { get; set; } = new List<string>();
-
+              
         public float Precio { get; set; }
     }
 }

@@ -9,8 +9,6 @@ namespace negocio
 {
     public class VoucherNegocio
     {
-
-
         public List<Voucher> ListarVouchers()
         {
             List<Voucher> lista = new List<Voucher>();
