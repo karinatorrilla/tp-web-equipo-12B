@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TPWeb_equipo_12B
 {
-    public partial class PaginaPremios : System.Web.UI.Page
+    public partial class PaginaMaestra : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

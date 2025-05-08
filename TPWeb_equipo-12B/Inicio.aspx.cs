@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using negocio;
 using dominio;
+using negocio;
 
 namespace TPWeb_equipo_12B
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Inicio : System.Web.UI.Page
     {
         private List<Voucher> listaVoucher;
         private List<Voucher> listaVoucherCanjeados;
@@ -36,7 +36,7 @@ namespace TPWeb_equipo_12B
             {
                 if (txtboxVoucher.Text == listaVoucher[i].Codigo)
                     Response.Redirect("PaginaPremios.aspx", false);
-               
+
             }
 
             for (int i = 0; i < listaVoucherCanjeados.Count; i++)
@@ -45,17 +45,17 @@ namespace TPWeb_equipo_12B
                 if (txtboxVoucher.Text == listaVoucherCanjeados[i].Codigo)
                 {
                     lblVoucherCanjeado.Visible = true;
-                    lblVoucherCanjeado.Text = "Voucher ya canjeado, intente con uno nuevo";
+                    lblVoucherCanjeado.Text = "¡Voucher ya canjeado, intente con uno nuevo!";
                 }
                 else
                 {
                     lblVoucherCanjeado.Visible = true;
-                    lblVoucherCanjeado.Text = "\nIngrese un voucher valido";
+                    lblVoucherCanjeado.Text = "\nIngrese un voucher válido...";
                 }
-               
+
 
             }
-          
+
         }
     }
 }
