@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container-fluid bg-warning d-flex flex-column">
+    <div class="container-fluid bg-warning d-flex flex-column" style="min-height:100vh">
         <div class="row justify-content-center flex-grow-1">
             <div class="col-12 text-center">
                 <asp:Image ID="imgBanderines" ImageUrl="images/banderines.png" runat="server" CssClass="img-fluid"  alt="Banderines"  />
@@ -40,7 +40,7 @@
                 </h2>
             </div>
             </div>
-            <div class="row justify-content-center text-center mt-4">
+            <div class="row justify-content-center text-center m-4">
             <div class="col-4 col-md-3">
                 <div class="rounded-circle mx-auto bgDarkOrange shadowMd zoomOnHover contentCircleOrange">
                     <span>Ingresá el código del voucher</span>
@@ -57,7 +57,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     
 
