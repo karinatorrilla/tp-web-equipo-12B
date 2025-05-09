@@ -21,13 +21,12 @@
             <div class="text-center" style="max-width: 300px; margin: 0 auto;">
                 <div class="mb-3">
                     <asp:Label Text="Ingresá el código de tu voucher:" ID="lblIngresaVoucher" CssClass="form-label" runat="server" />
-                    <asp:TextBox type="text" CssClass="form-control text-center" ID="txtboxVoucher" placeholder="XXXXXXXXXXXX" required="true" runat="server">
-                    </asp:TextBox>
+                    <asp:TextBox type="text" CssClass="form-control text-center" ID="txtboxVoucher" placeholder="Codigo9999999999999" required="true" runat="server"></asp:TextBox>
                 </div>
                 <div class="mb-3">
                     <asp:Button Text="Canjear" ID="btnAceptarVoucher" OnClick="btnAceptarVoucher_Click" CssClass="btn btn-success" runat="server" />
-                    <div>
-                        <asp:Label Text="¡Voucher ya canjeado, intente con uno nuevo!" ID="lblVoucherCanjeado" Visible="false" CssClass="form-label" runat="server" />
+                    <div class="text-danger font-weight-bold">
+                        <asp:Label Text="Ingrese un voucher válido..." ID="lblVoucherInvalido" Visible="false" CssClass="form-label" runat="server" />
                     </div>
                 </div>
             </div>

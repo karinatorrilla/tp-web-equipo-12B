@@ -15,6 +15,15 @@ namespace TPWeb_equipo_12B
     {
 
         /// <summary>
+        /// lblVoucherCanjeado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVoucherCanjeado;
+
+        /// <summary>
         /// btnIrInicio control.
         /// </summary>
         /// <remarks>

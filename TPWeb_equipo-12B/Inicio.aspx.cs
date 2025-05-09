@@ -30,34 +30,34 @@ namespace TPWeb_equipo_12B
             ///si esta disponible vamos a la pagina de premios para poder canjearlo
             ///sino mostramos un label de error de voucher o que esta canjeado
 
-            lblVoucherCanjeado.Visible = false;
+            lblVoucherInvalido.Visible = false;
+            Session["VoucherIngresado"] = txtboxVoucher.Text;
 
             for (int i = 0; i < listaVoucher.Count; i++)
             {
                 if (txtboxVoucher.Text == listaVoucher[i].Codigo)
+                {
+                    ///Si existe el voucher y ESTÁ DISPONIBLE, avanzamos a canjear el premio
                     Response.Redirect("PaginaPremios.aspx", false);
-                ///Si existe el voucher y ESTÁ DISPONIBLE, avanzamos a canjear el premio y
-                ///Redirige a la pantalla de mensaje
-                Response.Redirect("PaginaMensaje.aspx", false);
+
+                }
+                
             }
 
             for (int i = 0; i < listaVoucherCanjeados.Count; i++)
             {
-
                 if (txtboxVoucher.Text == listaVoucherCanjeados[i].Codigo)
                 {
-                    lblVoucherCanjeado.Visible = true;
-                    lblVoucherCanjeado.Text = "¡Voucher ya canjeado, intente con uno nuevo!";
+                    ///Redirige a la pantalla de mensaje
+                    Response.Redirect("PaginaMensaje.aspx", false);
                 }
                 else
                 {
-                    lblVoucherCanjeado.Visible = true;
-                    lblVoucherCanjeado.Text = "\nIngrese un voucher válido...";
+                    lblVoucherInvalido.Visible = true;
                 }
 
 
             }
-
         }
     }
 }
