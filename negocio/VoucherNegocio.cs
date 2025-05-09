@@ -22,16 +22,9 @@ namespace negocio
                 {
                     Voucher aux = new Voucher();
                     aux.Codigo = (string)datos.Lector["CodigoVoucher"];
-
-
                     // aux.Cliente = new Cliente();  para obtener datos del cliente
-
-
                     lista.Add(aux);
                 }
-
-
-
 
                 return lista;
             }
@@ -61,8 +54,6 @@ namespace negocio
 
                     lista.Add(aux);
                 }
-
-
                 return lista;
             }
             catch (Exception ex)
