@@ -1,0 +1,36 @@
+﻿body {
+    position: relative;
+    font-family: 'Nunito Sans';
+    font-weight: bold;
+    color: white;
+}
+
+.bgDarkOrange {
+    background-color: #ee9821;
+}
+
+.zoomOnHover {
+    transition: transform 0.2s ease-in-out;
+}
+
+.zoomOnHover:hover {
+    transform: scale(1.1);
+}
+
+.contentCircleOrange {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px;
+    border-color: #49300e;
+}
+
+.contentCircleOrange span {
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+

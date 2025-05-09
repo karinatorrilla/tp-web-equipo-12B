@@ -9,9 +9,9 @@ namespace dominio
 {
     public class Voucher
     {
-        public string Codigo { get; set; }
-        public Cliente Cliente { get; set; } //obtener IDCliente???
+        public string Codigo { get; set; } //CodigoVoucher
+        public Cliente Cliente { get; set; } //obtener IdCliente???
         public DateTime FechaCanje { get; set; }
-        public Articulo Articulo { get; set; } //obtener IDArticulo???
+        public Articulo Articulo { get; set; } //obtener IdArticulo???
     }
 }
