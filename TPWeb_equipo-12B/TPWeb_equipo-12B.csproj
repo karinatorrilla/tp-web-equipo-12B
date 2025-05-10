@@ -68,6 +68,7 @@
     <Content Include="css\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Inicio.aspx" />
+    <Content Include="js\JavaScript.js" />
     <Content Include="PaginaDatosCliente.aspx" />
     <Content Include="PaginaMensaje.aspx" />
     <Content Include="PaginaPremios.aspx" />

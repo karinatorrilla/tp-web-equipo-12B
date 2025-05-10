@@ -34,3 +34,40 @@
 }
 
 
+.modal-header h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.modal-body p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.carousel-item img {
+    height: 250px;
+    object-fit: contain;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
