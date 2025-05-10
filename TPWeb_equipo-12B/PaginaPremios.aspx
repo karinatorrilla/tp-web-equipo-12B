@@ -7,24 +7,25 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <asp:Repeater ID="RepeaterPremios" runat="server">
+    <div class="row column-gap-md-1">
 
-        <ItemTemplate>
-            
-            <div class="col-sm-12">
-            <h2>Artículo ID: <%# Eval("ArticuloId") %></h2>
-            
-            <asp:Repeater ID="RepeaterImagenes" runat="server" DataSource='<%# Eval("Imagenes") %>'>
-                <ItemTemplate>
-                    <img src='<%# Eval("ImagenUrl") %>' class="object-fit-contain border rounded" alt="Premio" style="width:150px; height:150px;">
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
+        <asp:Repeater ID="RepeaterPremios" runat="server">
 
-            
-        </ItemTemplate>
-    </asp:Repeater>
+            <ItemTemplate>
 
+                <div class="card" style="width: 18rem;">
+                    <img src="<%#Eval("ImagenUrl")%>" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%#Eval("Articulo.Nombre") %></h5>
+                        <p class="card-text"><%#Eval("Articulo.Descripcion") %></p>
+                        <a href="#" class="btn btn-primary">Boton</a>
+                    </div>
+                </div>
+
+            </ItemTemplate>
+        </asp:Repeater>
+
+    </div>
 
 
 

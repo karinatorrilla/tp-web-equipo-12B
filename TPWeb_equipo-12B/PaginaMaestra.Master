@@ -19,12 +19,16 @@
 
 <body class="d-flex flex-column min-vh-100 p-0">
     <form id="form1" runat="server" class="flex-grow-1 d-flex flex-column m-0">
-        <div class="flex-grow-1 p-0">
-            <div class="h-100">
+        <%--<div class="flex-grow-1 p-0">
+            <div class="h-100">--%>
+
+        <div class="container">
+
                  <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
-            </div>  
         </div>
+     <%--       </div>  
+        </div>--%>
         <%-- <footer class="text-bg-secondary text-center py-3 mt-auto">
             <span>&copy; <%: DateTime.Now.Year %> - Equipo 12B</span>
         </footer>--%>

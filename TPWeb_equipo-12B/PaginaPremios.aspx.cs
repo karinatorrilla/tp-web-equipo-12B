@@ -15,20 +15,10 @@ namespace TPWeb_equipo_12B
         protected void Page_Load(object sender, EventArgs e)
         {
             ImagenesNegocio imagenesPremios = new ImagenesNegocio();
-            listaImagenesPremios = imagenesPremios.ListarImagenesPremios();
-
-            //                                         Agrupamos las imagenes por id de articulo
-            var imgAgrupadasPorArticulo = listaImagenesPremios.GroupBy(i => i.Articulo.Id)
-                .Select(g => new
-                {
-                    ArticuloId = g.Key,
-                    Imagenes = g.ToList()
-                }).ToList();
-                //creamos la lista por cada articulo
+            listaImagenesPremios = imagenesPremios.ListarConSP();
 
 
-
-            RepeaterPremios.DataSource = imgAgrupadasPorArticulo;
+            RepeaterPremios.DataSource = listaImagenesPremios;
             RepeaterPremios.DataBind();
 
 
