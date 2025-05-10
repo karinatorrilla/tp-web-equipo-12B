@@ -18,11 +18,14 @@ namespace dominio
 
         [DisplayName("Descripción")]
         public string Descripcion { get; set; }
+
+
         public Marca Marca { get; set; } //obtener IDMarca
 
         [DisplayName("Categoría")]
         public Categoria Categoria { get; set; } //obtener IDCategoria
-              
+
         public float Precio { get; set; }
+        public List<Imagen> Imagenes { get; set; } // para guardar las imagenes de un articulo
     }
 }
