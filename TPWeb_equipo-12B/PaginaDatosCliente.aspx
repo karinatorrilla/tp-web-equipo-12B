@@ -13,7 +13,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="txtDni" class="form-label font-weight-bold text-dark">DNI</label>
-                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" required="true" />
+                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" required="true" AutoPostBack="true" OnTextChanged ="txtDni_TextChanged" />
                         </div>
                         <div class="mb-3">
                             <label for="txtNombre" class="form-label font-weight-bold text-dark">Nombre: </label>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-12 col-md-8 text-center">
-                        <asp:Button Text="Participar" ID="btnParticipar" CssClass="btn btn-primary w-100" runat="server" />
+                        <asp:Button Text="Participar" ID="btnParticipar" CssClass="btn btn-primary w-100" runat="server" OnClick="btnParticipar_Click" />
                     </div>
                 </div>
             </div>
