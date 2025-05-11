@@ -1,14 +1,17 @@
-﻿function mostrarModal(imagenUrl, nombre, descripcion, precio, id) {
-    var modalImg = document.getElementById("modalImagen");
-    var modalNombre = document.getElementById("modalNombre");
-    var modalDescripcion = document.getElementById("modalDescripcion");
-    var modalPrecio = document.getElementById("modalPrecio");
-    var btnSeleccionar = document.getElementById("btnSeleccionar");
+﻿(function () {
+    'use strict';
+    window.addEventListener('load', function () {
+        var forms = document.getElementsByClassName('needs-validation');
+        Array.prototype.forEach.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
 
-    modalImg.src = imagenUrl;
-    modalNombre.textContent = nombre;
-    modalDescripcion.textContent = descripcion;
-    modalPrecio.textContent = precio;
-    btnSeleccionar.dataset.productoId = id;
-    $('#productoModal').modal('show');
-}
+

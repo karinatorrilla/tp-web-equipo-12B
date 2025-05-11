@@ -2,52 +2,83 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="row justify-content-center">
+     <div class="row justify-content-center needs-validation">
         <div class="col-10 col-md-8 col-lg-6">
-            <div class="m-4"">
+            <div class="m-4">
                 <h2 class="mb-4 text-left font-weight-bold text-dark">Datos Personales</h2>
             </div>
-            
+
             <div class="p-4 rounded bg-white shadow-sm">
                 <div class="row">
                     <div class="col-12">
+                        <!-- DNI -->
                         <div class="mb-3">
                             <label for="txtDni" class="form-label font-weight-bold text-dark">DNI</label>
-                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" AutoPostBack="true" required="true" OnTextChanged ="txtDni_TextChanged" />
+                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" AutoPostBack="true" TextMode="SingleLine" required="true" OnTextChanged ="txtDni_TextChanged" MaxLength="50"  placeholder="11222333" />
+                            <div class="invalid-feedback">Ingrese un DNI válido (sólo números, mínimo 6 dígitos).</div>
                         </div>
+
+                        <!-- Nombre -->
                         <div class="mb-3">
-                            <label for="txtNombre" class="form-label font-weight-bold text-dark">Nombre: </label>
-                            <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" required="true" />
+                            <label for="txtNombre" class="form-label font-weight-bold text-dark">Nombre:</label>
+                            <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" required="true" pattern="^[A-Za-z]+$" placeholder="Pedro" />
+                            <div class="invalid-feedback">Nombre válido.</div>
                         </div>
+
+                        <!-- Apellido -->
                         <div class="mb-3">
-                            <label for="txtApellido" class="form-label font-weight-bold text-dark">Apellido: </label>
-                            <asp:TextBox runat="server" ID="txtApellido" CssClass="form-control" required="true" />
+                            <label for="txtApellido" class="form-label font-weight-bold text-dark">Apellido:</label>
+                            <asp:TextBox runat="server" ID="txtApellido" CssClass="form-control" required="true" pattern="^[A-Za-z]+$" placeholder="Lopez" />
+                            <div class="invalid-feedback">Apellido válido.</div>
                         </div>
+
+                        <!-- Email -->
                         <div class="mb-3">
-                            <label for="txtEmail" class="form-label font-weight-bold text-dark">Email: </label>
-                            <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" required="true" />
+                            <label for="txtEmail" class="form-label font-weight-bold text-dark">Email:</label>
+                            <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" TextMode="Email" required="true" placeholder="nombre@gmail.com"/>
+                            <div class="invalid-feedback">Ingrese un email válido.</div>
                         </div>
                     </div>
+
                     <div class="col-12">
+                        <!-- Dirección -->
                         <div class="mb-3">
-                            <label for="txtDireccion" class="form-label font-weight-bold text-dark">Dirección: </label>
-                            <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" required="true" />
+                            <label for="txtDireccion" class="form-label font-weight-bold text-dark">Dirección:</label>
+                            <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" required="true" placeholder="Avenida siempre viva"/>
+                            <div class="invalid-feedback">Dirección válida.</div>
                         </div>
+
+                        <!-- Ciudad -->
                         <div class="mb-3">
-                            <label for="txtCiudad" class="form-label font-weight-bold text-dark">Ciudad: </label>
-                            <asp:TextBox runat="server" ID="txtCiudad" CssClass="form-control" required="true" />
+                            <label for="txtCiudad" class="form-label font-weight-bold text-dark">Ciudad:</label>
+                            <asp:TextBox runat="server" ID="txtCiudad" CssClass="form-control" required="true" pattern="^[A-Za-z]+$" placeholder="Pacheco" />
+                            <div class="invalid-feedback">La ciudad no puede contener números.</div>
                         </div>
+
+                        <!-- Código Postal -->
                         <div class="mb-3">
-                            <label for="txtCP" class="form-label font-weight-bold text-dark">CP: </label>
-                            <asp:TextBox runat="server" ID="txtCP" CssClass="form-control" TextMode="Number" required="true" />
+                            <label for="txtCP" class="form-label font-weight-bold text-dark">CP:</label>
+                            <asp:TextBox runat="server" ID="txtCP" CssClass="form-control" TextMode="Number" required="true" placeholder="1617" />
+                            <div class="invalid-feedback">Ingrese un código postal válido(sólo números).</div>
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center mt-3">
-                    <div class="col-12 col-md-8 text-center">
-                        <asp:Button Text="Participar" ID="btnParticipar" CssClass="btn btn-primary w-100" runat="server" OnClick="btnParticipar_Click" />
+
+                <!-- Campos obligatorios texto -->
+                <div class="text-center mt-3">
+                    <small class="text-muted">Todos los campos son obligatorios.</small>
+                </div>
+
+
+                 <div class="row justify-content-between mt-4">
+                    <div class="col-md-6 mb-2 text-center">
+                        <asp:Button Text="Participar" ID="btnParticipar" CssClass="btn btn-primary w-100" runat="server" OnClick="btnParticipar_Click" UseSubmitBehavior="true" />
+                    </div>
+                    <div class="col-md-6 mb-2 text-center">
+                        <a href="PaginaPremios.aspx" class="btn btn-secondary w-100">Volver</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

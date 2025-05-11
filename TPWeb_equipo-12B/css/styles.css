@@ -2,7 +2,7 @@
     position: relative;
     font-family: 'Nunito Sans';
     font-weight: bold;
-    color: white;
+   
 }
 
 .bgDarkOrange {
@@ -71,3 +71,39 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+--# {
+    $prefix
+}
+
+form-valid-color: # {
+    $form-valid-color
+}
+
+;
+--# {
+    $prefix
+}
+
+form-valid-border-color: # {
+    $form-valid-border-color
+}
+
+;
+--# {
+    $prefix
+}
+
+form-invalid-color: # {
+    $form-invalid-color
+}
+
+;
+--# {
+    $prefix
+}
+
+form-invalid-border-color: # {
+    $form-invalid-border-color
+}
+
+;

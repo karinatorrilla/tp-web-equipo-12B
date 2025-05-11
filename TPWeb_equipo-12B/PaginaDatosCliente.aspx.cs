@@ -21,6 +21,7 @@ namespace TPWeb_equipo_12B
                 ClienteNegocio clienteNegocio = new ClienteNegocio();
                 listaCliente = clienteNegocio.ListarClientes();
                 Session["ListaClientes"] = listaCliente;
+
             }         
         }
 

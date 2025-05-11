@@ -18,7 +18,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100 p-0">
-    <form id="form1" runat="server" class="flex-grow-1 d-flex flex-column m-0">
+    <form id="form1" runat="server" class="flex-grow-1 d-flex flex-column m-0 needs-validation" novalidate>
         <%--<div class="flex-grow-1 p-0">
             <div class="h-100">--%>
 
