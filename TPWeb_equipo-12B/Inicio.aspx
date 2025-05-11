@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container-fluid d-flex flex-column" style="min-height:100vh">
+    <div class="container-fluid d-flex flex-column">
         <div class="row justify-content-center">
             <div class="col-12 text-center">
                 <asp:Image ID="imgBanderines" ImageUrl="images/banderines.png" runat="server" CssClass="img-fluid"  alt="Banderines"  />
@@ -11,8 +11,8 @@
         </div>
 
         <div class="text-center m-5">
-            <h1 class="display-5"  style="font-size: 3em;">¡Bienvenido!</h1>
-            <p class="text-center m-5">
+            <h1 class="display-5">¡Bienvenido!</h1>
+            <p class="text-center m-1">
                 Acá podés canjear increíbles premios.
             </p>
         </div>
@@ -21,11 +21,11 @@
             <div class="text-center" style="max-width: 300px; margin: 0 auto;">
                 <div class="mb-3">
                     <asp:Label Text="Ingresá el código de tu voucher:" ID="lblIngresaVoucher" CssClass="form-label" runat="server" />
-                    <asp:TextBox type="text" CssClass="form-control text-center" ID="txtboxVoucher" placeholder="Codigo9999999999999" required="true" runat="server"></asp:TextBox>
+                    <asp:TextBox type="text" CssClass="form-control text-center" ID="txtboxVoucher" placeholder="Codigo00" required="true" runat="server"></asp:TextBox>
                 </div>
                 <div class="mb-3">
                     <asp:Button Text="Canjear" ID="btnAceptarVoucher" OnClick="btnAceptarVoucher_Click" CssClass="btn btn-success" runat="server" />
-                    <div class="text-danger font-weight-bold">
+                    <div class="textVoucherInvalido">
                         <asp:Label Text="Ingrese un voucher válido..." ID="lblVoucherInvalido" Visible="false" CssClass="form-label" runat="server" />
                     </div>
                 </div>
@@ -44,7 +44,7 @@
 
         <div class="row justify-content-center mt-5">
             <div class="col-12 text-center">
-                <h2 class="font-weight-bold" style="font-size: 2.5em;">
+                <h2>
                     Cómo participar?
                 </h2>
             </div>

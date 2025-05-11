@@ -6,6 +6,27 @@
     color: white;
 }
 
+h1 {
+    font-size: 3rem;
+    font-weight:600 !important;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600 !important;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600 !important;
+}
+
+.textVoucherInvalido {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
 .bgDarkOrange {
     background-color: #ff5900;
 }
