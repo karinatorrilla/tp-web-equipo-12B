@@ -78,12 +78,7 @@
                     <div class="col-md-6 mb-2 text-center">
                         <a href="PaginaPremios.aspx" class="btn btn-secondary w-100">Volver</a>
                     </div>
-                    <div class="col-md-6 mb-2 text-center">
-                        <asp:Button Text="Modificar Datos" ID="btnModificarDatos" Visible="false" CssClass="btn btn-secondary w-100" runat="server" OnClick="btnModificarDatos_Click" UseSubmitBehavior="true" />
-                    </div>
-                    <div class="col-md-6 mb-2 text-center">
-                        <asp:Button Text="Guardar Datos" ID="btnActualizarDatos" Visible="false" CssClass="btn btn-success w-100" runat="server" OnClick="btnActualizarDatos_Click" UseSubmitBehavior="true" />
-                    </div>
+
                 </div>
 
             </div>
