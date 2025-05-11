@@ -22,14 +22,14 @@
                         <div class="mb-3">
                             <label for="txtNombre" class="form-label font-weight-bold text-dark">Nombre:</label>
                             <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" required="true" pattern="^[A-Za-z]+$" placeholder="Pedro" />
-                            <div class="invalid-feedback">Nombre válido.</div>
+                            <div class="invalid-feedback">Ingrese un nombre válido.</div>
                         </div>
 
                         <!-- Apellido -->
                         <div class="mb-3">
                             <label for="txtApellido" class="form-label font-weight-bold text-dark">Apellido:</label>
                             <asp:TextBox runat="server" ID="txtApellido" CssClass="form-control" required="true" pattern="^[A-Za-z]+$" placeholder="Lopez" />
-                            <div class="invalid-feedback">Apellido válido.</div>
+                            <div class="invalid-feedback">Ingrese un apellido válido.</div>
                         </div>
 
                         <!-- Email -->
@@ -45,7 +45,7 @@
                         <div class="mb-3">
                             <label for="txtDireccion" class="form-label font-weight-bold text-dark">Dirección:</label>
                             <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" required="true" placeholder="Avenida siempre viva"/>
-                            <div class="invalid-feedback">Dirección válida.</div>
+                            <div class="invalid-feedback">Ingrese una dirección válida.</div>
                         </div>
 
                         <!-- Ciudad -->
@@ -65,8 +65,8 @@
                 </div>
 
                 <!-- Campos obligatorios texto -->
-                <div class="text-center mt-3">
-                    <small class="text-muted">Todos los campos son obligatorios.</small>
+                <div class="text-start mt-3">
+                    <p class="text-muted" style="font-size: 12px;">Todos los campos son obligatorios.</p>
                 </div>
 
 
