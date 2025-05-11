@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="PaginaDatosCliente.aspx.cs" Inherits="TPWeb_equipo_12B.PaginaDatosCliente" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     <div class="row justify-content-center needs-validation">
+    <div class="row justify-content-center needs-validation">
         <div class="col-10 col-md-8 col-lg-6">
             <div class="m-4">
                 <h2 class="mb-4 text-left font-weight-bold text-dark">Datos Personales</h2>
@@ -14,7 +15,7 @@
                         <!-- DNI -->
                         <div class="mb-3">
                             <label for="txtDni" class="form-label font-weight-bold text-dark">DNI</label>
-                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" AutoPostBack="true" TextMode="SingleLine" required="true" OnTextChanged ="txtDni_TextChanged" MaxLength="50"  placeholder="11222333" />
+                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" AutoPostBack="true" TextMode="SingleLine" required="true" OnTextChanged="txtDni_TextChanged" MaxLength="50" placeholder="11222333" />
                             <div class="invalid-feedback">Ingrese un DNI válido (sólo números, mínimo 7 dígitos).</div>
                         </div>
 
@@ -35,7 +36,7 @@
                         <!-- Email -->
                         <div class="mb-3">
                             <label for="txtEmail" class="form-label font-weight-bold text-dark">Email:</label>
-                            <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" TextMode="Email" required="true" placeholder="nombre@gmail.com"/>
+                            <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" TextMode="Email" required="true" placeholder="nombre@gmail.com" />
                             <div class="invalid-feedback">Ingrese un email válido.</div>
                         </div>
                     </div>
@@ -44,7 +45,7 @@
                         <!-- Dirección -->
                         <div class="mb-3">
                             <label for="txtDireccion" class="form-label font-weight-bold text-dark">Dirección:</label>
-                            <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+)*$" placeholder="Avenida siempre viva 123"/>
+                            <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+)*$" placeholder="Avenida siempre viva 123" />
                             <div class="invalid-feedback">Ingrese una dirección válida.</div>
                         </div>
 
@@ -69,13 +70,19 @@
                     <p class="text-muted" style="font-size: 12px;">Todos los campos son obligatorios.</p>
                 </div>
 
-
-                 <div class="row justify-content-between mt-4">
+                <!-- Botones -->
+                <div class="row justify-content-between mt-4">
                     <div class="col-md-6 mb-2 text-center">
                         <asp:Button Text="Participar" ID="btnParticipar" CssClass="btn btn-primary w-100" runat="server" OnClick="btnParticipar_Click" UseSubmitBehavior="true" />
                     </div>
                     <div class="col-md-6 mb-2 text-center">
                         <a href="PaginaPremios.aspx" class="btn btn-secondary w-100">Volver</a>
+                    </div>
+                    <div class="col-md-6 mb-2 text-center">
+                        <asp:Button Text="Modificar Datos" ID="btnModificarDatos" Visible="false" CssClass="btn btn-secondary w-100" runat="server" OnClick="btnModificarDatos_Click" UseSubmitBehavior="true" />
+                    </div>
+                    <div class="col-md-6 mb-2 text-center">
+                        <asp:Button Text="Guardar Datos" ID="btnActualizarDatos" Visible="false" CssClass="btn btn-success w-100" runat="server" OnClick="btnActualizarDatos_Click" UseSubmitBehavior="true" />
                     </div>
                 </div>
 

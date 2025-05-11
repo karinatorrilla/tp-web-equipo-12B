@@ -54,7 +54,8 @@ namespace TPWeb_equipo_12B
                     txtCP.Text = listaCliente[i].CP.ToString();
 
                     camposEditables(false);
-
+                    btnModificarDatos.Visible = true;
+                    
                     // Guardo el IDCliente en una session, ya que existe.
                     Session["IDCliente"] = listaCliente[i].Id;
                     break;
@@ -76,7 +77,8 @@ namespace TPWeb_equipo_12B
             {
                 if (Session["IDCliente"] != null)
                 {
-                    IDClienteParticipante = (int)Session["IDCliente"]; // si el cliente existe, me guardo el IDCliente.
+                    IDClienteParticipante = (int)Session["IDCliente"]; 
+                    // si el cliente existe, me guardo el IDCliente.
                 }
                 else
                 {
@@ -116,6 +118,33 @@ namespace TPWeb_equipo_12B
             {
                 throw ex;
             }
+        }
+
+        protected void btnModificarDatos_Click(object sender, EventArgs e)
+        {
+            camposEditables(true);
+            btnActualizarDatos.Visible = true;
+
+
+
+        }
+
+        protected void btnActualizarDatos_Click(object sender, EventArgs e)
+        {
+            camposEditables(false);
+            Cliente cliente = new Cliente();
+            ClienteNegocio clienteNegocio = new ClienteNegocio();
+
+            cliente.Documento = txtDni.Text;
+            cliente.Nombre = txtNombre.Text;
+            cliente.Apellido = txtApellido.Text;
+            cliente.Email = txtEmail.Text;
+            cliente.Direccion = txtDireccion.Text;
+            cliente.Ciudad = txtCiudad.Text;
+            cliente.CP = int.Parse(txtCP.Text);
+
+            clienteNegocio.modificarCliente(cliente);
+            btnActualizarDatos.Visible = false;
         }
     }
 }

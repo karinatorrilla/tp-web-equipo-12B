@@ -99,5 +99,33 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+
+
+        public void modificarCliente(Cliente modificado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Clientes SET Nombre = @Nombre,Apellido = @Apellido,Email = @Email,Direccion = @Direccion,Ciudad = Ciudad,CP = @CP WHERE Documento = " + modificado.Documento + "");
+                datos.setearParametro("@Documento", modificado.Documento);
+
+                datos.setearParametro("@Nombre", modificado.Nombre);
+                datos.setearParametro("@Apellido", modificado.Apellido);
+                datos.setearParametro("@Email", modificado.Email);
+                datos.setearParametro("@Direccion", modificado.Direccion);
+                datos.setearParametro("@Ciudad", modificado.Ciudad);
+                datos.setearParametro("@CP", modificado.CP);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
