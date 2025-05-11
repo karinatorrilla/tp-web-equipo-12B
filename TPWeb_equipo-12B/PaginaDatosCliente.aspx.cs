@@ -35,15 +35,7 @@ namespace TPWeb_equipo_12B
             }
         }
 
-        public void camposEditables(bool estado)
-        {
-            txtNombre.Enabled = estado;
-            txtApellido.Enabled = estado;
-            txtEmail.Enabled = estado;
-            txtDireccion.Enabled = estado;
-            txtCiudad.Enabled = estado;
-            txtCP.Enabled = estado;
-        }
+     
 
         protected void txtDni_TextChanged(object sender, EventArgs e)
         {
@@ -65,10 +57,7 @@ namespace TPWeb_equipo_12B
                     Session["IDCliente"] = listaCliente[i].Id;
                     break;
                 }
-                else
-                {
-                    camposEditables(false);
-                }
+                
             }
         }
 
