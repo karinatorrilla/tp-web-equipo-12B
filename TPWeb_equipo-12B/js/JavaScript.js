@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         camposVerificarTrim.forEach(function (id) {
             const campos = document.getElementById(id);
             if (campos) {
-                campos.value = input.value.trim().replace(/\s+/g, ' ');
+                campos.value = campos.value.trim().replace(/\s+/g, ' ');
             }
         });
 
@@ -59,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('logoTrack');
+    if (!track) return; // Si no existe
+
     const logos = Array.from(track.children);
     logos.forEach(logo => {
         const clone = logo.cloneNode(true);
