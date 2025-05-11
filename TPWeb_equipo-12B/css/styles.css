@@ -7,10 +7,10 @@
 }
 
 .bgDarkOrange {
-    background-color: #ee9821;
+    background-color: #ff5900;
 }
 .fondoPremios {
-    background-color: #FDAC53;
+    background-color: #ff5900;
 }
 .zoomOnHover {
     transition: transform 0.2s ease-in-out;
@@ -119,4 +119,40 @@ form-invalid-border-color: # {
     src: url('../fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: italic;
+}
+
+.carousel-wrapper {
+    width: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    background: white;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scrollLeft 20s linear infinite;
+}
+
+.logo {
+    height: 80px;
+    margin: 0 40px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.logo:hover {
+    filter: none;
+    transform: scale(1.1);
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }

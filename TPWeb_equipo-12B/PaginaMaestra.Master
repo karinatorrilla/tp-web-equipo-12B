@@ -27,7 +27,7 @@
                 </asp:ContentPlaceHolder>
         </div>
 
-         <footer class="text-bg-secondary text-center py-3 mt-auto">
+         <footer class="text-center py-1 mt-auto" style="background-color: #000; font-size: 0.9rem;">
             <span>&copy; <%: DateTime.Now.Year %> - Equipo 12B</span>
         </footer>
         

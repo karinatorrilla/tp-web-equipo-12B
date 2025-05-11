@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container-fluid d-flex flex-column" style="min-height:100vh">
-        <div class="row justify-content-center flex-grow-1">
+        <div class="row justify-content-center">
             <div class="col-12 text-center">
                 <asp:Image ID="imgBanderines" ImageUrl="images/banderines.png" runat="server" CssClass="img-fluid"  alt="Banderines"  />
             </div>
@@ -30,6 +30,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="logoTrack">
+            <img src="images/logitech.jpg" alt="Logitech" class="logo" />
+            <img src="images/huawei.png" alt="Huawei" class="logo" />
+            <img src="images/motorola.png" alt="Motorola" class="logo" />
+            <img src="images/royal.jpg" alt="Royal" class="logo" />
+            <img src="images/wilson.png" alt="Wilson" class="logo" />
+          </div>
         </div>
 
         <div class="row justify-content-center mt-5">
