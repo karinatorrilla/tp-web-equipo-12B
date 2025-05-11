@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container-fluid bg-warning d-flex flex-column" style="min-height:100vh">
+    <div class="container-fluid d-flex flex-column" style="min-height:100vh">
         <div class="row justify-content-center flex-grow-1">
             <div class="col-12 text-center">
                 <asp:Image ID="imgBanderines" ImageUrl="images/banderines.png" runat="server" CssClass="img-fluid"  alt="Banderines"  />
