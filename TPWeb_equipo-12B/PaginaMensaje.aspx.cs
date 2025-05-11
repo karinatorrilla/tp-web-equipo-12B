@@ -39,12 +39,17 @@ namespace TPWeb_equipo_12B
                 }
             }
 
-            // Verificamos si es un registro exitoso
+            // Verificamos si es un registro exitoso o un error de permisos
             if (!IsPostBack)
             {
                 if (mensajeRegistro == "RegistroExitoso")
                 {
                     lblVoucherCanjeado.Text = "¡Enhorabuena! Tu voucher fue canjeado correctamente.";
+                    lblVoucherCanjeado.Visible = true;
+                }
+                else if (mensajeRegistro == "ErrorPermisos")
+                {
+                    lblVoucherCanjeado.Text = "¡No tiene los permisos necesarios!";
                     lblVoucherCanjeado.Visible = true;
                 }
             }

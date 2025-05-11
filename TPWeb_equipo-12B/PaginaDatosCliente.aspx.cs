@@ -18,11 +18,19 @@ namespace TPWeb_equipo_12B
         {
             if (!IsPostBack)
             {
+                // Validar existencia de datos requeridos
+                if (Session["CodigoVoucher"] == null || Session["IDArticulo"] == null)
+                {
+                    Session["MensajeRegistro"] = "ErrorPermisos";
+                    Response.Redirect("PaginaMensaje.aspx");
+                    return;
+                }
+
+
                 ClienteNegocio clienteNegocio = new ClienteNegocio();
                 listaCliente = clienteNegocio.ListarClientes();
                 Session["ListaClientes"] = listaCliente;
-                string CodigoVoucher = Session["CodigoVoucher"] != null ? Session["CodigoVoucher"].ToString() : "";
-                int IdArticuloACanjear = Session["IDArticulo"] != null ? (int)Session["IDArticulo"] : 0;
+                
 
             }         
         }

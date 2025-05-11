@@ -14,6 +14,15 @@ namespace TPWeb_equipo_12B
         private List<Articulo> listaPremios;
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Validación: si no hay voucher en sesión, redirigir a mensaje de error
+            if (Session["CodigoVoucher"] == null)
+            {
+                Session["MensajeRegistro"] = "ErrorPermisos";
+                Response.Redirect("PaginaMensaje.aspx", false);
+                return;
+            }
+
+
             ArticuloNegocio premios = new ArticuloNegocio();
             listaPremios = premios.listarConSp();
 
