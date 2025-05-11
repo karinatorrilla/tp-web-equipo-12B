@@ -37,6 +37,7 @@ namespace TPWeb_equipo_12B
         {
             int idArticuloACanjear = int.Parse(((Button)sender).CommandArgument);
             Session.Add("IDArticulo", idArticuloACanjear);
+            
             Response.Redirect("PaginaDatosCliente.aspx", false);
 
         }

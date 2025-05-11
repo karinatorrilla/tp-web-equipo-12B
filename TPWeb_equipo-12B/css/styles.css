@@ -180,6 +180,7 @@ form-invalid-border-color: # {
     margin: 0 auto;
     background: white;
     padding: 20px 0;
+    border-radius:30px;
 }
 
 .carousel-track {

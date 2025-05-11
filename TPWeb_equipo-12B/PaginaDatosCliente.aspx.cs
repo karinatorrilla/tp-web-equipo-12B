@@ -94,7 +94,8 @@ namespace TPWeb_equipo_12B
                     IDClienteParticipante = clienteNegocio.obtenerIDNuevoCliente(); // obtener id de ese cliente
                 }
 
-
+                Session.Add("NombreCliente", cliente.Nombre);
+               
                 //UPDATE EN DB la fecha de canje (tabla Voucher)
                 //UPDATE EN DB del CodigoVoucher (tabla Voucher)
                 //UPDATE EN DB el IDCliente (tabla Voucher)

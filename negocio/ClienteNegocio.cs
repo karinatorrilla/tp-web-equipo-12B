@@ -107,7 +107,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("UPDATE Clientes SET Nombre = @Nombre,Apellido = @Apellido,Email = @Email,Direccion = @Direccion,Ciudad = Ciudad,CP = @CP WHERE Documento = " + modificado.Documento + "");
+                datos.setearConsulta("UPDATE Clientes SET Nombre = @Nombre,Apellido = @Apellido,Email = @Email,Direccion = @Direccion,Ciudad = @Ciudad,CP = @CP WHERE Documento = " + modificado.Documento + "");
                 datos.setearParametro("@Documento", modificado.Documento);
 
                 datos.setearParametro("@Nombre", modificado.Nombre);

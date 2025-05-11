@@ -45,14 +45,14 @@
                         <!-- Dirección -->
                         <div class="mb-3">
                             <label for="txtDireccion" class="form-label font-weight-bold text-dark">Dirección:</label>
-                            <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+)*$" placeholder="Avenida siempre viva 123" />
+                            <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ.0-9]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+)*$" placeholder="Avenida siempre viva 123" />
                             <div class="invalid-feedback">Ingrese una dirección válida.</div>
                         </div>
 
                         <!-- Ciudad -->
                         <div class="mb-3">
                             <label for="txtCiudad" class="form-label font-weight-bold text-dark">Ciudad:</label>
-                            <asp:TextBox runat="server" ID="txtCiudad" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$" placeholder="Pacheco" />
+                            <asp:TextBox runat="server" ID="txtCiudad" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ.]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$" placeholder="Pacheco" />
                             <div class="invalid-feedback">La ciudad no puede contener números.</div>
                         </div>
 

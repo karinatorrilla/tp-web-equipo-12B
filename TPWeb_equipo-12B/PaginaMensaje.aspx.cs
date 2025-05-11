@@ -18,6 +18,7 @@ namespace TPWeb_equipo_12B
         {
             if (!IsPostBack)
             {
+
                 lblVoucherCanjeado.Visible = false;
 
                 string mensajeRegistro = (string)Session["MensajeRegistro"];
@@ -25,7 +26,10 @@ namespace TPWeb_equipo_12B
 
                 if (mensajeRegistro == "RegistroExitoso")
                 {
-                    lblVoucherCanjeado.Text = "¡Enhorabuena! Tu voucher fue canjeado correctamente.";
+                    Random random = new Random();
+                    int numeroAleatorio = random.Next(0000, 9999);
+
+                    lblVoucherCanjeado.Text = "¡Enhorabuena! Tu voucher fue canjeado correctamente. Nro de comprobante: " + numeroAleatorio +Session["IdArticulo"] + Session["IDCliente"] + ".";
                     lblVoucherCanjeado.Visible = true;
                 }
                 else if (mensajeRegistro == "ErrorPermisos")
