@@ -4,6 +4,7 @@
     font-weight: bold;
     background-color: #ff5900 !important;
     color: white;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -38,6 +39,26 @@ h3 {
     padding: 5px;
     
 }
+
+.btn:focus {
+    color: white;
+    outline: none;
+}
+
+.btn:hover {
+    color: white !important;
+}
+
+
+.btnSelectPremio {
+    width: 80%;
+    display: block;
+    background-color: #ff5900 !important;
+    color: white;
+    padding: 5px;
+    margin: 0 auto;
+}
+
 .bgDarkOrange {
     background-color: #ff5900;
 }

@@ -6,7 +6,7 @@
     <div class="row justify-content-center needs-validation">
         <div class="col-10 col-md-8 col-lg-6">
             <div class="m-4">
-                <h2 class="mb-4 text-left font-weight-bold text-dark">Datos Personales</h2>
+                <h2 class="mb-4 text-left font-weight-bold">Datos Personales</h2>
             </div>
 
             <div class="p-4 rounded bg-white shadow-sm">

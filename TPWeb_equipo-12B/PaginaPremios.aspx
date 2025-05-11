@@ -53,8 +53,8 @@
                             <small>Marca: <%# Eval("Marca.Descripcion") %> <br />
                                 Categoría: <%# Eval("Categoria.Descripcion") %></small>
                         </div>
-                        <div class="row-cols-sm-1">
-                            <asp:Button CssClass="btn btn-success" CommandArgument='<%# Eval("Id") %>'  OnClick="btnSeleccionarPremios_Click" ID="btnSeleccionarPremios" runat="server" Text="Seleccionar Premio" />
+                        <div class="row-cols-sm-1 m-3">
+                            <asp:Button CssClass="btn btnSelectPremio" CommandArgument='<%# Eval("Id") %>'  OnClick="btnSeleccionarPremios_Click" ID="btnSeleccionarPremios" runat="server" Text="Seleccionar Premio" />
                         </div>
                     </div>
                 </div>
