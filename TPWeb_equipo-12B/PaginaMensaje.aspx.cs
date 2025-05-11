@@ -21,32 +21,25 @@ namespace TPWeb_equipo_12B
             listaVoucherCanjeados = voucherNegocio.ListarVouchersCanjeados();
 
             string mensajeRegistro = (string)Session["MensajeRegistro"];
+            string voucherIngresado = (string)Session["VoucherIngresado"];
 
             lblVoucherCanjeado.Visible = false;
-            if (Session["VoucherIngresado"] != null) {
 
-                string voucherIngresado = Session["VoucherIngresado"].ToString();
-
+            // Verificamos si el voucher ya fue canjeado
+            if (!string.IsNullOrEmpty(voucherIngresado))
+            {
                 for (int i = 0; i < listaVoucherCanjeados.Count; i++)
                 {
-
                     if (voucherIngresado == listaVoucherCanjeados[i].Codigo)
                     {
                         lblVoucherCanjeado.Visible = true;
                         lblVoucherCanjeado.Text = "¡Voucher ya canjeado, intente con uno nuevo!";
+                        break;
                     }
-                    else
-                    {
-                        lblVoucherCanjeado.Visible = true;
-                        lblVoucherCanjeado.Text = "\nIngrese un voucher válido...";
-                    }
-
-
                 }
-
-
             }
-               
+
+            // Verificamos si es un registro exitoso
             if (!IsPostBack)
             {
                 if (mensajeRegistro == "RegistroExitoso")

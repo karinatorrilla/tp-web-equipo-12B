@@ -15,20 +15,20 @@
                         <div class="mb-3">
                             <label for="txtDni" class="form-label font-weight-bold text-dark">DNI</label>
                             <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" AutoPostBack="true" TextMode="SingleLine" required="true" OnTextChanged ="txtDni_TextChanged" MaxLength="50"  placeholder="11222333" />
-                            <div class="invalid-feedback">Ingrese un DNI válido (sólo números, mínimo 6 dígitos).</div>
+                            <div class="invalid-feedback">Ingrese un DNI válido (sólo números, mínimo 7 dígitos).</div>
                         </div>
 
                         <!-- Nombre -->
                         <div class="mb-3">
                             <label for="txtNombre" class="form-label font-weight-bold text-dark">Nombre:</label>
-                            <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" required="true" pattern="^[A-Za-z]+$" placeholder="Pedro" />
+                            <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$" placeholder="Pedro" />
                             <div class="invalid-feedback">Ingrese un nombre válido.</div>
                         </div>
 
                         <!-- Apellido -->
                         <div class="mb-3">
                             <label for="txtApellido" class="form-label font-weight-bold text-dark">Apellido:</label>
-                            <asp:TextBox runat="server" ID="txtApellido" CssClass="form-control" required="true" pattern="^[A-Za-z]+$" placeholder="Lopez" />
+                            <asp:TextBox runat="server" ID="txtApellido" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$" placeholder="Lopez" />
                             <div class="invalid-feedback">Ingrese un apellido válido.</div>
                         </div>
 
@@ -44,14 +44,14 @@
                         <!-- Dirección -->
                         <div class="mb-3">
                             <label for="txtDireccion" class="form-label font-weight-bold text-dark">Dirección:</label>
-                            <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" required="true" placeholder="Avenida siempre viva"/>
+                            <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+)*$" placeholder="Avenida siempre viva 123"/>
                             <div class="invalid-feedback">Ingrese una dirección válida.</div>
                         </div>
 
                         <!-- Ciudad -->
                         <div class="mb-3">
                             <label for="txtCiudad" class="form-label font-weight-bold text-dark">Ciudad:</label>
-                            <asp:TextBox runat="server" ID="txtCiudad" CssClass="form-control" required="true" pattern="^[A-Za-z]+$" placeholder="Pacheco" />
+                            <asp:TextBox runat="server" ID="txtCiudad" CssClass="form-control" required="true" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$" placeholder="Pacheco" />
                             <div class="invalid-feedback">La ciudad no puede contener números.</div>
                         </div>
 
