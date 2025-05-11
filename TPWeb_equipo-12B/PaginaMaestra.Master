@@ -27,9 +27,9 @@
                 </asp:ContentPlaceHolder>
         </div>
 
-        <%-- <footer class="text-bg-secondary text-center py-3 mt-auto">
+         <footer class="text-bg-secondary text-center py-3 mt-auto">
             <span>&copy; <%: DateTime.Now.Year %> - Equipo 12B</span>
-        </footer>--%>
+        </footer>
         
     </form>
 
