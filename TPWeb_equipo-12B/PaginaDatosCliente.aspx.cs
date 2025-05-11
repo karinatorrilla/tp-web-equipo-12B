@@ -21,6 +21,8 @@ namespace TPWeb_equipo_12B
                 ClienteNegocio clienteNegocio = new ClienteNegocio();
                 listaCliente = clienteNegocio.ListarClientes();
                 Session["ListaClientes"] = listaCliente;
+                string CodigoVoucher = Session["CodigoVoucher"] != null ? Session["CodigoVoucher"].ToString() : "";
+                int IdArticuloACanjear = Session["IDArticulo"] != null ? (int)Session["IDArticulo"] : 0;
 
             }         
         }
@@ -69,7 +71,7 @@ namespace TPWeb_equipo_12B
             Cliente cliente = new Cliente();
             ClienteNegocio clienteNegocio = new ClienteNegocio();
 
-            //INSERTO EN DB los datos del cliente ingresado (tabla Clientes)
+            // INSERTO EN DB los datos del cliente ingresado (tabla Clientes)
             try
             {
                 if (Session["IDCliente"] != null)
@@ -79,7 +81,6 @@ namespace TPWeb_equipo_12B
                 else
                 {
                     // si no existe, lo agrego a la base de datos.
-
                     cliente.Documento = txtDni.Text;
                     cliente.Nombre = txtNombre.Text;
                     cliente.Apellido = txtApellido.Text;
@@ -90,25 +91,31 @@ namespace TPWeb_equipo_12B
                     clienteNegocio.agregarClienteDB(cliente); // agregar
 
                     IDClienteParticipante = clienteNegocio.obtenerIDNuevoCliente(); // obtener id de ese cliente
-
                 }
+
+
+                //UPDATE EN DB la fecha de canje (tabla Voucher)
+                //UPDATE EN DB del CodigoVoucher (tabla Voucher)
+                //UPDATE EN DB el IDCliente (tabla Voucher)
+                //UPDATE EN DB el IDArticulo seleccionado a través del session de la paginaPremios (tabla Voucher)
+                // INSERTAR VOUCHER EN DB
+                VoucherNegocio voucherNegocio = new VoucherNegocio();
+                string codigoVoucher = (string)Session["CodigoVoucher"];
+                int idArticulo = (int)Session["IDArticulo"];
+                DateTime fechaCanje = DateTime.Today;
+
+
+                // Canjeo del voucher (UPDATE en la tabla)
+                voucherNegocio.agregarVoucherDB(codigoVoucher, IDClienteParticipante, fechaCanje, idArticulo);
+
+                //REDIRECT a PaginaMensaje por registro exitoso del cliente
+                Session["MensajeRegistro"] = "RegistroExitoso";
+                Response.Redirect("PaginaMensaje.aspx");
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
-
-
-            //UPDATE EN DB la fecha de canje (tabla Voucher)
-            //UPDATE EN DB del CodigoVoucher (tabla Voucher)
-            //UPDATE EN DB el IDCliente (tabla Voucher)
-            //UPDATE EN DB el IDArticulo seleccionado a través del session de la paginaPremios (tabla Voucher)
-
-            //REDIRECT a PaginaMensaje por registro exitoso del cliente
-            Session["MensajeRegistro"] = "RegistroExitoso";
-            Response.Redirect("PaginaMensaje.aspx");
-
         }
     }
 }

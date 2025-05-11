@@ -67,6 +67,28 @@ namespace negocio
 
         }
 
+        public void agregarVoucherDB(string codigoVoucher, int idCliente, DateTime fechaCanje, int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Vouchers SET IdCliente = @idCliente, FechaCanje = @fechaCanje, IdArticulo = @idArticulo WHERE CodigoVoucher = @codigoVoucher");
+                datos.setearParametro("@idCliente", idCliente);
+                datos.setearParametro("@fechaCanje", fechaCanje);
+                datos.setearParametro("@idArticulo", idArticulo);
+                datos.setearParametro("@codigoVoucher", codigoVoucher);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
 
 
     }

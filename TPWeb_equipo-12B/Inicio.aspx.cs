@@ -38,6 +38,7 @@ namespace TPWeb_equipo_12B
                 if (txtboxVoucher.Text == listaVoucher[i].Codigo)
                 {
                     ///Si existe el voucher y ESTÁ DISPONIBLE, avanzamos a canjear el premio
+                    Session.Add("CodigoVoucher", listaVoucher[i].Codigo);
                     Response.Redirect("PaginaPremios.aspx", false);
 
                 }
