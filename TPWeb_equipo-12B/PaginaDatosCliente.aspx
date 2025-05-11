@@ -13,7 +13,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="txtDni" class="form-label font-weight-bold text-dark">DNI</label>
-                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" required="true" AutoPostBack="true" OnTextChanged ="txtDni_TextChanged" />
+                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" AutoPostBack="true" required="true" OnTextChanged ="txtDni_TextChanged" />
                         </div>
                         <div class="mb-3">
                             <label for="txtNombre" class="form-label font-weight-bold text-dark">Nombre: </label>
