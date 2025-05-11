@@ -105,7 +105,10 @@ namespace TPWeb_equipo_12B
             //UPDATE EN DB el IDCliente (tabla Voucher)
             //UPDATE EN DB el IDArticulo seleccionado a través del session de la paginaPremios (tabla Voucher)
 
-            //REDIRECT a PaginaRegistroExitoso
+            //REDIRECT a PaginaMensaje por registro exitoso del cliente
+            Session["MensajeRegistro"] = "RegistroExitoso";
+            Response.Redirect("PaginaMensaje.aspx");
+
         }
     }
 }

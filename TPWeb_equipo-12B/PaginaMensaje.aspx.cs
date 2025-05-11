@@ -13,11 +13,14 @@ namespace TPWeb_equipo_12B
     {
         private List<Voucher> listaVoucher;
         private List<Voucher> listaVoucherCanjeados;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             VoucherNegocio voucherNegocio = new VoucherNegocio();
             listaVoucher = voucherNegocio.ListarVouchers();
             listaVoucherCanjeados = voucherNegocio.ListarVouchersCanjeados();
+
+            string mensajeRegistro = (string)Session["MensajeRegistro"];
 
             lblVoucherCanjeado.Visible = false;
             if (Session["VoucherIngresado"] != null) {
@@ -43,11 +46,17 @@ namespace TPWeb_equipo_12B
 
 
             }
-
                
+            if (!IsPostBack)
+            {
+                if (mensajeRegistro == "RegistroExitoso")
+                {
+                    lblVoucherCanjeado.Text = "¡Enhorabuena! Tu voucher fue canjeado correctamente.";
+                    lblVoucherCanjeado.Visible = true;
+                }
+            }
 
         }
-
         protected void btnIrInicio_Click(object sender, EventArgs e)
         {
             Response.Redirect("Inicio.aspx", false);
