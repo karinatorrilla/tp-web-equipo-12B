@@ -16,32 +16,13 @@ namespace TPWeb_equipo_12B
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            VoucherNegocio voucherNegocio = new VoucherNegocio();
-            listaVoucher = voucherNegocio.ListarVouchers();
-            listaVoucherCanjeados = voucherNegocio.ListarVouchersCanjeados();
-
-            string mensajeRegistro = (string)Session["MensajeRegistro"];
-            string voucherIngresado = (string)Session["VoucherIngresado"];
-
-            lblVoucherCanjeado.Visible = false;
-
-            // Verificamos si el voucher ya fue canjeado
-            if (!string.IsNullOrEmpty(voucherIngresado))
-            {
-                for (int i = 0; i < listaVoucherCanjeados.Count; i++)
-                {
-                    if (voucherIngresado == listaVoucherCanjeados[i].Codigo)
-                    {
-                        lblVoucherCanjeado.Visible = true;
-                        lblVoucherCanjeado.Text = "¡Voucher ya canjeado, intente con uno nuevo!";
-                        break;
-                    }
-                }
-            }
-
-            // Verificamos si es un registro exitoso o un error de permisos
             if (!IsPostBack)
             {
+                lblVoucherCanjeado.Visible = false;
+
+                string mensajeRegistro = (string)Session["MensajeRegistro"];
+                string voucherIngresado = (string)Session["VoucherIngresado"];
+
                 if (mensajeRegistro == "RegistroExitoso")
                 {
                     lblVoucherCanjeado.Text = "¡Enhorabuena! Tu voucher fue canjeado correctamente.";
@@ -52,8 +33,22 @@ namespace TPWeb_equipo_12B
                     lblVoucherCanjeado.Text = "¡No tiene los permisos necesarios!";
                     lblVoucherCanjeado.Visible = true;
                 }
-            }
+                else if (!string.IsNullOrEmpty(voucherIngresado))
+                {
+                    VoucherNegocio voucherNegocio = new VoucherNegocio();
+                    List<Voucher> listaVoucherCanjeados = voucherNegocio.ListarVouchersCanjeados();
 
+                    bool fueCanjeado = listaVoucherCanjeados.Any(v => v.Codigo == voucherIngresado);
+                    if (fueCanjeado)
+                    {
+                        lblVoucherCanjeado.Text = "¡Voucher ya canjeado, intente con uno nuevo!";
+                        lblVoucherCanjeado.Visible = true;
+                    }
+                }
+
+                // Limpio el Session["MensajeRegistro"] para evitar que persista en navegación
+                Session["MensajeRegistro"] = null;
+            }
         }
         protected void btnIrInicio_Click(object sender, EventArgs e)
         {
