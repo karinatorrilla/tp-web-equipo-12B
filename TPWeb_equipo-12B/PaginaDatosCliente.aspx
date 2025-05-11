@@ -15,7 +15,7 @@
                         <!-- DNI -->
                         <div class="mb-3">
                             <label for="txtDni" class="form-label font-weight-bold text-dark">DNI</label>
-                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" AutoPostBack="true" TextMode="SingleLine" required="true" OnTextChanged="txtDni_TextChanged" MaxLength="50" placeholder="11222333" />
+                            <asp:TextBox runat="server" ID="txtDni" CssClass="form-control" AutoPostBack="true" TextMode="SingleLine" required="true" OnTextChanged="txtDni_TextChanged" MaxLength="8" placeholder="11222333" />
                             <div class="invalid-feedback">Ingrese un DNI válido (sólo números, mínimo 7 dígitos).</div>
                         </div>
 

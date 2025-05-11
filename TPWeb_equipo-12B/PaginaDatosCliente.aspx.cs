@@ -57,6 +57,16 @@ namespace TPWeb_equipo_12B
                     Session["IDCliente"] = listaCliente[i].Id;
                     break;
                 }
+                else {
+                    Session["IDCliente"] = null;
+                    txtNombre.Text = "";
+                    txtApellido.Text = "";
+                    txtEmail.Text = "";
+                    txtDireccion.Text = "";
+                    txtCiudad.Text = "";
+                    txtCP.Text = "";
+
+                }
                 
             }
         }
